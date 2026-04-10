@@ -92,8 +92,6 @@ async def ask_claude(prompt:str) -> str:
     return "\n".join(response_parts) or "我没有得到Claude的回复"
 
 async def handle_message(update:Update, context):
-    """
-    """
     if not update.message or not update.message.text:
         return
     response = await ask_claude(update.message.text)
